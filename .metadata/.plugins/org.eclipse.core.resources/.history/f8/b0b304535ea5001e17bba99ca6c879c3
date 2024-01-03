@@ -1,0 +1,5 @@
+package com.codewithdurgest.blog.exceptions;
+
+public class GlobalExceptionHandler {
+
+}

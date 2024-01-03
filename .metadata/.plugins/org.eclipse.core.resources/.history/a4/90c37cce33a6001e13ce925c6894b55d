@@ -1,0 +1,19 @@
+package com.codewithdurgest.blog.payloads;
+
+
+
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@NoArgsConstructor
+@Getter
+@Setter
+public class PostDto {
+
+	private String title;
+	
+	private String content;
+	
+	//No need to take the id date image acoording to the requirement
+}

@@ -1,0 +1,5 @@
+package com.codewithdurgest.blog.secuity;
+
+public class CustomUserDetailService {
+
+}

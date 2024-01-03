@@ -1,0 +1,105 @@
+package com.codewithdurgest.blog.services.impl;
+
+import java.util.List;
+import java.util.stream.Collectors;
+
+import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.codewithdurgest.blog.entities.User;
+import com.codewithdurgest.blog.exceptions.ResourceNotFoundException;
+import com.codewithdurgest.blog.payloads.UserDto;
+import com.codewithdurgest.blog.repositories.UserRepo;
+import com.codewithdurgest.blog.services.UserService;
+@Service
+public class UserServiceImpl implements UserService {
+	
+	@Autowired
+	private UserRepo userRepo;
+	
+	@Autowired
+	private ModelMapper modelMapper;
+
+	@Override
+	public UserDto createUser(UserDto userDto) {
+		
+		//here in the save method we need to pass user entity but in the method we haver userdto
+		//so create a new method to convert userdto to userentity 
+		//also another methods to convert userentity to userdto
+		
+		User user = this.dtoToUser(userDto);
+		//this save is the inbuilt method of JpaRepository 
+		User savedUser = this.userRepo.save(user);
+		
+		return this.UserToDto(savedUser);
+	}
+
+	@Override
+	public UserDto updateUser(UserDto userDto, Integer userId) {
+		// TODO Auto-generated method stub
+		User user = this.userRepo.findById(userId).orElseThrow(()-> new ResourceNotFoundException("User"," id ",userId));
+		
+		user.setName(userDto.getName());
+		user.setEmail(userDto.getEmail());
+		user.setPassword(userDto.getPassword());
+		user.setAbout(userDto.getAbout());
+		User savedUser = this.userRepo.save(user);
+		UserDto userDto1 = this.UserToDto(savedUser);
+		return userDto1;
+	}
+
+	@Override
+	public UserDto getUserById(Integer userId) {
+		
+		
+		User user = this.userRepo.findById(userId).orElseThrow(()-> new ResourceNotFoundException("User"," id ",userId));
+		return this.UserToDto(user);
+	}
+
+	@Override
+	public List<UserDto> getAllUsers() {
+		List<User> users = this.userRepo.findAll();
+		
+		List<UserDto> userDtos = users.stream().map(user->this.UserToDto(user)).collect(Collectors.toList());
+		return userDtos;
+	}
+
+	@Override
+	public void deleteUser(Integer userId) {
+		// TODO Auto-generated method stub
+		User user = this.userRepo.findById(userId).orElseThrow(()-> new ResourceNotFoundException("User"," id ",userId));
+		this.userRepo.delete(user);
+	}
+	
+	public User dtoToUser(UserDto userDto)
+	{
+		User user = this.modelMapper.map(userDto, User.class);
+//		user.setId(userDto.getId());
+//		user.setName(userDto.getName());
+//		user.setEmail(userDto.getEmail());
+//		user.setPassword(userDto.getPassword());
+//		user.setAbout(userDto.getAbout());
+		
+		//use the model mapper library instead of manually writing it
+		//download the modelmapper in maven
+		
+		
+		return user;
+	}
+	
+	public UserDto UserToDto(User user)
+	{
+		//use the model mapper library instead of manually writing it
+				//download the modelmapper in maven
+				
+		UserDto userDto = this.modelMapper.map(user,UserDto.class);
+//		userDto.setId(user.getId());
+//		userDto.setName(user.getName());
+//		userDto.setEmail(user.getEmail());
+//		userDto.setPassword(user.getPassword());
+//		userDto.setAbout(user.getAbout());
+		return userDto;
+	}
+
+}

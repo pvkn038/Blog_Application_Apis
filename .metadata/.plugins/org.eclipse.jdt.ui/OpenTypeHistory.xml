@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<typeInfoHistroy>
+    <typeInfo handle="=blog-app-apis/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.codewithdurgest.blog.services{UserService.java[UserService" modifiers="513" timestamp="1703682842925"/>
+    <typeInfo handle="=blog-app-apis/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.codewithdurgest.blog.services{CategoryService.java[CategoryService" modifiers="513" timestamp="1703768528680"/>
+    <typeInfo handle="=blog-app-apis/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.codewithdurgest.blog.services{PostService.java[PostService" modifiers="513" timestamp="1704170037783"/>
+    <typeInfo handle="=blog-app-apis/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.codewithdurgest.blog.services{FileService.java[FileService" modifiers="513" timestamp="1704199434467"/>
+    <typeInfo handle="=blog-app-apis/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.codewithdurgest.blog.services{CommentService.java[CommentService" modifiers="513" timestamp="1704211980417"/>
+    <typeInfo handle="=blog-app-apis/C:\/STS Java Project\/sts-4.21.0.RELEASE\/plugins\/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.9.v20231028-0858\/jre\/lib\/jrt-fs.jar`java.xml=/javadoc_location=/https:\/\/docs.oracle.com\/en\/java\/javase\/17\/docs\/api\/=/=/maven.pomderived=/true=/&lt;org.w3c.dom(Comment.class[Comment" modifiers="1537" timestamp="1703242780014"/>
+</typeInfoHistroy>

@@ -1,0 +1,5 @@
+package com.codewithdurgest.blog.repositories;
+
+public interface CommentRepo {
+
+}

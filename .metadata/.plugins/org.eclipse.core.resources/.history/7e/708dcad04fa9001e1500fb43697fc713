@@ -1,0 +1,5 @@
+package com.codewithdurgest.blog.config;
+
+public class AppConstants {
+
+}

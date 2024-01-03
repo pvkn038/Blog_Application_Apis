@@ -1,0 +1,5 @@
+package com.codewithdurgest.blog.services;
+
+public interface CommentService {
+
+}

@@ -1,0 +1,12 @@
+package com.codewithdurgest.blog.services;
+
+import com.codewithdurgest.blog.entities.Post;
+import com.codewithdurgest.blog.payloads.CommentDto;
+
+public interface CommentService {
+	
+	CommentDto createComment(CommentDto commentDto,Post postId);
+	
+	void deleteComment(Integer commentId);
+
+}

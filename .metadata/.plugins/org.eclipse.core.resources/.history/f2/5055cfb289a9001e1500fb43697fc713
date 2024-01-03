@@ -1,0 +1,21 @@
+package com.codewithdurgest.blog.services.impl;
+
+import com.codewithdurgest.blog.entities.Post;
+import com.codewithdurgest.blog.payloads.CommentDto;
+import com.codewithdurgest.blog.services.CommentService;
+
+public class CommentServiceImpl implements CommentService {
+
+	@Override
+	public CommentDto createComment(CommentDto commentDto, Post postId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void deleteComment(Integer commentId) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
